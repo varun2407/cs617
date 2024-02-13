@@ -1,9 +1,15 @@
 <!DOCTYPE html>
+<html>
 <head>
 <title>Zakim Bridge</title>
 <style>
+  body {
+    margin: 0;
+    background-color: black;
+    position: relative;
+  }
 
-   img {
+  img {
     position: absolute;
     top: 0;
     left: 0;
@@ -14,11 +20,71 @@
 
   img.overlay {
     z-index: 2;
+    filter: brightness(70%);
+  }
+
+
+  .text-overlay {
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 3;
+  }
+
+
+  .text-overlay + .text-overlay {
+    margin-left: 10px;
+  }
+
+
+  button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    color: black;
   }
 </style>
 </head>
-<body style="background-color: black;">
-<img src="boston.jpg" style="width: 100vw">
-<img src="13542495286.png" class="overlay" style="filter: brightness(70%) sepia(100%);">
+
+<body>
+  <img src="boston.jpg" style="width: 100vw">
+  <img src="13542495286.png" class="overlay">
+
+  <!-- FACTS -->
+  <div class="text-overlay" style="top: 50px; left: 50px;background-color: rgba(255, 255, 255, 0.5);">Construction lasted 4 years from 1998 to 2002</div>
+  <div class="text-overlay" style="top: 150px; left: 150px; background-color: rgba(255, 255, 255, 0.7);">The world's largest asymmetrical cable-stayed bridge</div>
+  <div class="text-overlay" style="top: 250px; left: 250px; color: black; background-color: rgba(255, 255, 255, 0.8);">The Bridge lights are <ul><li>Blue</li><li>Green for Celtics</li><li>Gold for Bruins</li></ul></div>
+  <div class="text-overlay" style="top: 450px; left: 300px; color: white; background-color: rgba(255, 255, 255, 0.5);">Designed by Swiss engineer Christian Menn and architect Miguel Rosales.</div>
+  <div class="text-overlay" style="top: 550px; left: 350px; color: white; background-color: rgba(255, 255, 255, 0.5);">The first asymmetrical cable-stayed bridge to be built in the United States.</div>
+
+
+  <button onclick="toggleTint()">Change Lights</button>
+
+  <script>
+    var currentTint = 0;
+
+    function toggleTint() {
+      var overlayImage = document.querySelector('.overlay');
+
+      if (currentTint === 0) {
+        // Gold
+        overlayImage.style.filter = "brightness(70%) sepia(100%)";
+        currentTint = 1;
+      } else if (currentTint === 1) {
+        // Blue
+        overlayImage.style.filter = "brightness(100%) sepia(60%) hue-rotate(200deg)";
+        currentTint = 2;
+      } else {
+        // Red
+        overlayImage.style.filter = "brightness(100%) sepia(50%) hue-rotate(85deg)";
+        currentTint = 0;
+      }
+    }
+  </script>
 </body>
 </html>
