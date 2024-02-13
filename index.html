@@ -43,10 +43,30 @@
 
   button {
     position: absolute;
-    top: 10px;
+    top: 150px;
     left: 10px;
     z-index: 3;
     color: black;
+  }
+
+  @font-face {
+    font-family: 'Bosox';
+    src: url('fonts/Bosox.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Celtics';
+    src: url('fonts/Celtics.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Bruins';
+    src: url('fonts/Bruins.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Patriots';
+    src: url('fonts/Patriots.ttf') format('truetype');
   }
 </style>
 </head>
@@ -56,15 +76,14 @@
   <img src="13542495286.png" class="overlay">
 
   <!-- FACTS -->
-  <div class="text-overlay" style="top: 50px; left: 50px;background-color: rgba(255, 255, 255, 0.5);">Construction lasted 4 years from 1998 to 2002</div>
-  <div class="text-overlay" style="top: 150px; left: 150px; background-color: rgba(255, 255, 255, 0.7);">The world's largest asymmetrical cable-stayed bridge</div>
-  <div class="text-overlay" style="top: 250px; left: 250px; color: black; background-color: rgba(255, 255, 255, 0.8);">The Bridge lights are <ul><li>Blue</li><li>Green for Celtics</li><li>Gold for Bruins</li></ul></div>
-  <div class="text-overlay" style="top: 450px; left: 300px; color: white; background-color: rgba(255, 255, 255, 0.5);">Designed by Swiss engineer Christian Menn and architect Miguel Rosales.</div>
-  <div class="text-overlay" style="top: 550px; left: 350px; color: white; background-color: rgba(255, 255, 255, 0.5);">The first asymmetrical cable-stayed bridge to be built in the United States.</div>
-
+  <div class="text-overlay" style="top: 100px; left: 50px;background-color: rgba(255, 255, 255);color: red; font-family: 'Bosox'; font-size: x-large;">Construction lasted 4 years from 1998 to 2002</div>
+  <div class="text-overlay" style="top: 150px; left: 150px; background-color: rgba(243, 251, 6, 0.961);font-family: 'Bruins';">Designed by Swiss engineer Christian Menn and architect Miguel Rosales.</div>
+  <div class="text-overlay" style="top: 250px; left: 300px; color: white; background-color: green; font-family: 'Celtics'; font-size: x-large;">The world's largest asymmetrical cable-stayed bridge</div>
+  <div class="text-overlay" style="top: 450px; left: 300px; color: red; background-color: rgba(8, 6, 105); font-family:'Patriots'; font-size: x-large;">The first asymmetrical cable-stayed bridge to be built in the United States.</div>
 
   <button onclick="toggleTint()">Change Lights</button>
 
+  <img src="zakimtimeline.jpg">
   <script>
     var currentTint = 0;
 
